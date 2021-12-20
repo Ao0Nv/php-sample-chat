@@ -1,4 +1,4 @@
 <?php
-    header("Location: https://github.com/Ao0Nv/php-sample-chat/index.html");
+    header("Location: ./index.html");
     exit();
 ?>
