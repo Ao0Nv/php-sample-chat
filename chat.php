@@ -3,7 +3,6 @@
         // 投稿内容を表示
         echo $chat['time'],"：　",$chat['name'],"：",$chat['message'];
         echo nl2br("\n");
-    }
 
     // 投稿内容を登録
     if(isset($_POST["send"])) {
@@ -19,8 +18,8 @@
     // DB接続
     function connectDB() {
         $dsn = 'pgsql:dbname=phpchat host="127.0.0.1" port=5432';
-        $user = "postgres"
-        $password = "Moca1432"
+        $user = "postgres";
+        $password = "Moca1432";
         $dbh = new PDO($dsn, $user, $password);
         return $dbh;
     }
