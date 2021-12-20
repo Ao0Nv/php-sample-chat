@@ -39,7 +39,7 @@
 
     // DB接続
     function connectDB() {
-        $dsn = 'pgsql:dbname=phpchat host=127.0.0.1 port=5432';
+        $dsn = 'pgsql:dbname=phpchat host="127.0.0.1" port=5432';
         $user = 'postgres';
         $password = 'Moca1432';
         $dbh = new PDO($dsn, $user, $password);
