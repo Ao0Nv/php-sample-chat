@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>チャット</title>
+</head>
+ 
+<body>
+     
+ 
+ 
+<h1>チャット</h1>
+ 
+<form method="post" action="chat.php">
+    名前　<input type="text" name="name">
+    メッセージ　<input type="text" name="message">
+ 
+    <button name="send" type="submit">送信</button>
+ 
+    チャット履歴
+</form>
+
 <section>
     <?php // DBからデータ(投稿内容)を取得 $stmt = select(); foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
         // 投稿内容を表示
@@ -17,7 +39,7 @@
 
     // DB接続
     function connectDB() {
-        $dsn = 'pgsql:dbname=phpchat host="127.0.0.1" port=5432';
+        $dsn = 'pgsql:dbname="phpchat" host="127.0.0.1" port=5432';
         $user = "postgres";
         $password = "Moca1432";
         $dbh = new PDO($dsn, $user, $password);
