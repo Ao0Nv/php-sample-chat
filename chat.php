@@ -64,7 +64,7 @@
         function select_new() 
         {
             $dbh = connectDB();
-            $sql = "SELECT * FROM chat ORDER BY time desc limit 1";
+            $sql = "SELECT * FROM chat ORDER BY time asc limit 10"; //asc->昇順 desc->降順　limit 10->10行表示
             $stmt = $dbh->prepare($sql);
             $stmt->execute();
             return $stmt;
