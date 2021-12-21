@@ -74,10 +74,15 @@
         function insert() 
         {
             $dbh = connectDB();
-            $sql = "INSERT INTO chat (name, message, time) VALUES (:name, :message, now())";
+
+            $tz_object = new DateTimeZone('Asia/Tokyo');
+            $datetime = new DateTime();
+            $datetime->setTimezone($tz_object);
+            
+            $sql = "INSERT INTO chat (name, message, time) VALUES (:name, :message, :time)";
             $stmt = $dbh->prepare($sql);
-            $params = array(':name'=>$_POST['name'], ':message'=>$_POST['message']);
-            $stmt->execute($params);
+            $params = array(':name'=>$_POST['name'], ':message'=>$_POST['message'], ':time'=>$datetime->format('Y\-m\-d\ h:i:s'));
+            $stmt->$paramsexecute();
         }
         
     ?>
