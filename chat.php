@@ -46,7 +46,10 @@
         }
 
         // 投稿内容を表示
-        echo $chat['time'],"：",$chat['name'],"：",$chat['message'];
+        if($chat['message']!=0)
+        {
+            echo $chat['time'],"：",$chat['name'],"：",$chat['message'];
+        }
 
         // DB接続
         function connectDB() 
