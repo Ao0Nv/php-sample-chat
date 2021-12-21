@@ -22,7 +22,7 @@
 <title>チャット</title>
 
 <form method="post" action="chat.php">
-    名前　<input type="text" name="name" value="<?php echo $name_value; ?>">
+    名前　<input type="text" name="name" value="<?php echo $chat['name']; ?>">
     メッセージ　<input type="text" name="message">
  
     <button name="send" type="submit">送信</button>
@@ -35,7 +35,6 @@
         // 投稿内容を登録
         if(isset($_POST["send"])) 
         {
-            $name_value = $chat['name'];
             insert();
             // 投稿した内容を表示
             $stmt = select_new();
