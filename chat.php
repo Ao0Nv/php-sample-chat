@@ -81,8 +81,8 @@
             
             $sql = "INSERT INTO chat (name, message, time) VALUES (:name, :message, :time)";
             $stmt = $dbh->prepare($sql);
-            $params = array(':name'=>$_POST['name'], ':message'=>$_POST['message'], ':time'=>$datetime->format('Y\-m\-d\ h:i:s'));
-            $stmt->$paramsexecute();
+            $params = array(':name'=>$_POST['name'], ':message'=>$_POST['message'], ':time'=>($datetime->format('Y-m-d h:i:s')));
+            $stmt->execute($params);
         }
         
     ?>
