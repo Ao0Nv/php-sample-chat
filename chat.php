@@ -41,10 +41,10 @@
         function connectDB() 
         {
             //$dsn = 'pgsql:dbname=phpchat host=127.0.0.1 port=5432';
-            $dbname='phpchat';
-            $dbhost='127.0.0.1';
-            $user = 'postgres';
-            $password = 'Moca1432';
+            $dbname='d7rp6rg9un3b7n';
+            $dbhost='ec2-52-20-143-167.compute-1.amazonaws.com';
+            $user = 'lsdcwkuczvhjfz';
+            $password = 'a86fad44999cb4ef0b42a50426250ddeb7c27dc65ac45d20cbbfc3686f8a72f1';
             $port="5432";
             $dbh = new PDO("pgsql:host=$dbhost; port=$port; dbname=$dbname; user=$user; password=$password");
             return $dbh;
@@ -79,6 +79,7 @@
             $params = array(':name'=>$_POST['name'], ':message'=>$_POST['message']);
             $stmt->execute($params);
         }
+        
     ?>
 </section>
  
