@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="refresh" content="10" >
-  <title>チャット</title>
 
   <br>
   <style>
@@ -19,7 +18,9 @@
 </head>
  
 <body>
- 
+
+<title>チャット</title>
+
 <form method="post" action="chat.php">
     名前　<input type="text" name="name">
     メッセージ　<input type="text" name="message">
@@ -30,7 +31,12 @@
 <section>
     <?php // DBからデータ(投稿内容)を取得 $stmt = select(); foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
         // 投稿内容を表示
-        //echo $chat['time'],"：",$chat['name'],"：",$chat['message'];
+        $stmt = select_new();
+        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $chat) 
+        {
+            echo $chat['time'],"：",$chat['name'],"：",$chat['message'];
+            echo nl2br("\n");
+        }
         echo nl2br("\n");
 
         // 投稿内容を登録
