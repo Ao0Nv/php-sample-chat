@@ -30,14 +30,7 @@
 
 <section>
     <?php // DBからデータ(投稿内容)を取得 $stmt = select(); foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
-        // 投稿内容を表示
-        $stmt = select_new();
-        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $chat) 
-        {
-            echo $chat['time'],"：",$chat['name'],"：",$chat['message'];
-            echo nl2br("\n");
-        }
-        echo nl2br("\n");
+        
 
         // 投稿内容を登録
         if(isset($_POST["send"])) 
@@ -51,6 +44,9 @@
                 echo nl2br("\n");
             }
         }
+
+        // 投稿内容を表示
+        echo $chat['time'],"：",$chat['name'],"：",$chat['message'];
 
         // DB接続
         function connectDB() 
