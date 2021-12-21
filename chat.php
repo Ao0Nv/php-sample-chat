@@ -21,6 +21,7 @@
 
 <h2>チャット</h2>
 <hr>
+<br>
 <form method="post" action="chat.php">
     名前　<input type="text" name="name" value="<?php echo $_POST['name']; ?>">
     メッセージ　<input type="text" name="message">
