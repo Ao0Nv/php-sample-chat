@@ -22,7 +22,7 @@
 <title>チャット</title>
 
 <form method="post" action="chat.php">
-    名前　<input type="text" name="name" value="<?php echo $chat['name']; ?>">
+    名前　<input type="text" name="name" value="<?php echo $_POST['name']; ?>">
     メッセージ　<input type="text" name="message">
  
     <button name="send" type="submit">送信</button>
