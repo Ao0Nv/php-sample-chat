@@ -19,14 +19,15 @@
  
 <body>
 
-<title>チャット</title>
-
+<h2>チャット</h2>
+<hr>
 <form method="post" action="chat.php">
     名前　<input type="text" name="name" value="<?php echo $_POST['name']; ?>">
     メッセージ　<input type="text" name="message">
  
     <button name="send" type="submit">送信</button>
 </form>
+<br>
 
 <section>
     <?php // DBからデータ(投稿内容)を取得 $stmt = select(); foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
