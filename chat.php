@@ -83,7 +83,7 @@
         function select_new() 
         {
             $dbh = connectDB();
-            $sql = "SELECT * FROM chat ORDER BY time asc limit 20"; //asc->昇順 desc->降順　limit 20->20行表示
+            $sql = "SELECT * FROM chat ORDER BY time desc limit 20"; //asc->昇順 desc->降順　limit 20->20行表示
             $stmt = $dbh->prepare($sql);
             $stmt->execute();
             return $stmt;
