@@ -2,16 +2,18 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="20" >
+  <meta http-equiv="refresh" content="10" >
   <title>チャット</title>
 
+  <br>
   <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 16px Helvetica, Arial; background: #fffacd;}
+      h2 {padding: 10px}
       .form { background: #ffd700; padding: 3px; position: fixed; bottom: 0; width: 100%; }
       .form input { border: 0; padding: 10px; width: 89%; margin-right: .5%; }
       .form button { width: 9%; background: #f4a460; border: none; padding: 10px; }
-      section{background: #ffd700;}
+      ul { list-style-type: none; margin: 0; padding: 0; }
     </style>
 
 </head>
