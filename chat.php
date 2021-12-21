@@ -3,6 +3,16 @@
 <head>
   <meta charset="utf-8">
   <title>チャット</title>
+
+  <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 16px Helvetica, Arial; background: #fffacd;}
+      .form { background: #ffd700; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      .form input { border: 0; padding: 10px; width: 89%; margin-right: .5%; }
+      .form button { width: 9%; background: #f4a460; border: none; padding: 10px; }
+      section{background: #ffd700;}
+    </style>
+
 </head>
  
 <body>
@@ -14,14 +24,12 @@
     メッセージ　<input type="text" name="message">
  
     <button name="send" type="submit">送信</button>
- 
-    チャット履歴
 </form>
 
 <section>
     <?php // DBからデータ(投稿内容)を取得 $stmt = select(); foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
         // 投稿内容を表示
-        echo $chat['time'],"：",$chat['name'],"：",$chat['message'];
+        //echo $chat['time'],"：",$chat['name'],"：",$chat['message'];
         echo nl2br("\n");
 
         // 投稿内容を登録
@@ -64,7 +72,7 @@
         function select_new() 
         {
             $dbh = connectDB();
-            $sql = "SELECT * FROM chat ORDER BY time asc limit 10"; //asc->昇順 desc->降順　limit 10->10行表示
+            $sql = "SELECT * FROM chat ORDER BY time asc limit 20"; //asc->昇順 desc->降順　limit 20->20行表示
             $stmt = $dbh->prepare($sql);
             $stmt->execute();
             return $stmt;
