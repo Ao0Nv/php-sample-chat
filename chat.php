@@ -46,9 +46,14 @@
         }
 
         // 投稿内容を表示
-        if($chat['message']!=0)
+        if($chat['message']==0)
         {
-            echo $chat['time'],"：",$chat['name'],"：",$chat['message'];
+            $stmt = select_new();
+            foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $chat) 
+            {
+                echo $chat['time'],"：",$chat['name'],"：",$chat['message'];
+                echo nl2br("\n");
+            }
         }
 
         // DB接続
