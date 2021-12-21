@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="refresh" content="20" >
   <title>チャット</title>
 
   <style>
@@ -16,8 +17,6 @@
 </head>
  
 <body>
-     
-<h1>チャット</h1>
  
 <form method="post" action="chat.php">
     名前　<input type="text" name="name">
