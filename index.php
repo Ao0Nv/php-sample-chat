@@ -1,4 +1,4 @@
 <?php
-    header("Location: ./chat.php");
+    header("Location: ./v-chat.php");
     exit();
 ?>
