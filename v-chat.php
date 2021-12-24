@@ -48,20 +48,18 @@
         }
 
         // 投稿内容を表示
-        const countUp = () =>
+        function showmsg()
         {
 
-            if($chat['message']==0)
+            
+            $stmt = select_new();
+            foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $chat) 
             {
-                $stmt = select_new();
-                foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $chat) 
-                {
-                    echo $chat['time'],"：",$chat['name'],"：",$chat['message'];
-                    echo nl2br("\n");
-                }
+                echo $chat['time'],"：",$chat['name'],"：",$chat['message'];
+                echo nl2br("\n");
             }
         }
-        setInterval(countUp, 1000);
+        setInterval(showmsg(), 1000);
 
         // DB接続
         function connectDB() 
