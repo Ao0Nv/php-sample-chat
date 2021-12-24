@@ -1,0 +1,4 @@
+20210621093817.wav
+ohayogozaimasu.wav
+dialog_2.wav
+dialog_3.wav
