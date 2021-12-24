@@ -48,10 +48,9 @@
         }
 
         // 投稿内容を表示
-        function showmsg()
+        /*
+        if($chat['message']==0)
         {
-
-            
             $stmt = select_new();
             foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $chat) 
             {
@@ -59,7 +58,7 @@
                 echo nl2br("\n");
             }
         }
-        setInterval(showmsg(), 1000);
+        */
 
         // DB接続
         function connectDB() 
@@ -110,6 +109,18 @@
         }
         
     ?>
+    <script>
+        function showmsg(){
+        $stmt = select_new();
+        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $chat) 
+        {
+            echo $chat['time'],"：",$chat['name'],"：",$chat['message'];
+            echo nl2br("\n");
+        }
+        }
+        setInterval("showmsg()", 1000);
+
+    </script>
 </section>
- 
+
 </body>
